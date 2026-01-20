@@ -1,3 +1,5 @@
+package no.hvl.data102.filmarkiv.impl;
+
 import java.util.Objects;
 //1.1
 public class Film {
@@ -6,17 +8,18 @@ public class Film {
     private String produsent;
     private String tittel;
     private int aar;
-    private Enum sjanger;
+    private Sjanger sjanger;
     private String filmselskap;
 
     public Film() {
     }
 
-    public Film(int filmnr, String produsent, String tittel, int aar, String filmselskap) {
+    public Film(int filmnr, String produsent, String tittel, int aar, Sjanger sjanger, String filmselskap) {
         this.filmnr = filmnr;
         this.produsent = produsent;
         this.tittel = tittel;
         this.aar = aar;
+        this.sjanger = sjanger;
         this.filmselskap = filmselskap;
     }
 
@@ -52,6 +55,14 @@ public class Film {
         this.aar = aar;
     }
 
+    public Sjanger getSjanger() {
+        return sjanger;
+    }
+
+    public void setSjanger(Sjanger sjanger) {
+        this.sjanger = sjanger;
+    }
+
     public String getFilmselskap() {
         return filmselskap;
     }
@@ -70,5 +81,17 @@ public class Film {
     @Override
     public int hashCode() {
         return Objects.hash(filmnr, produsent, tittel, aar, filmselskap);
+    }
+
+    @Override
+    public String toString() {
+        return "Film{" +
+                "filmnr=" + filmnr +
+                ", produsent='" + produsent + '\'' +
+                ", tittel='" + tittel + '\'' +
+                ", aar=" + aar +
+                ", sjanger=" + sjanger +
+                ", filmselskap='" + filmselskap + '\'' +
+                '}';
     }
 }
