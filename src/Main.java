@@ -11,6 +11,7 @@ public class Main {
 
         // Hvis samme nummer skrives ut, fix override 1.1
 
+
     }
 
 }
