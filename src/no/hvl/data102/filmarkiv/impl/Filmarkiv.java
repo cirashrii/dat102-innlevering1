@@ -72,7 +72,13 @@ public class Filmarkiv implements FilmarkivADT {
 
     @Override
     public int antall(Sjanger sjanger) {
-        return 0;
+        int x = 0;
+        for (int i = 0; i < antall; i++) {
+            if (filmarkiv[i].getSjanger() == sjanger) {
+                x++;
+            }
+        }
+        return x;
     }
 
     @Override
