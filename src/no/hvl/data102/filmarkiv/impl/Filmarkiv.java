@@ -69,7 +69,7 @@ public class Filmarkiv implements FilmarkivADT {
 
     @Override
     public int antall() {
-        return 0;
+        return antall;
     }
 
     private Film[] trimTab(Film[] tab, int n) {
