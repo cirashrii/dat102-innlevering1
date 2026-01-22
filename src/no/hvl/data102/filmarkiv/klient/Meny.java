@@ -17,8 +17,5 @@ public class Meny {
 // TODO
             Film aaa = new Film(3,"George", "Wars", 1995, Sjanger.ACTION, "Disney");
 
-
         }
-
-
 }
