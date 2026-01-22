@@ -49,12 +49,29 @@ public class Filmarkiv implements FilmarkivADT {
 
     @Override
     public boolean slettFilm(int filmnr) {
+        for (int i = 0; i < antall; i++) {
+            if (filmarkiv[i].getFilmnr() == filmnr) {
+                filmarkiv[i] = filmarkiv[antall];
+                filmarkiv[antall] = null;
+                antall--;
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public Film[] soekTittel(String delstreng) {
-        return new Film[0];
+        Film[] tittel = new Film[antall];
+        int count = 0;
+        for(int i=0; i<antall; i++){
+            if (filmarkiv[i].getTittel().contains(delstreng)){
+                count++;
+                tittel[count - 1] = filmarkiv[i];
+            }
+
+        }
+        return tittel;
     }
 
     @Override
@@ -73,12 +90,18 @@ public class Filmarkiv implements FilmarkivADT {
 
     @Override
     public int antall(Sjanger sjanger) {
-        return 0;
+        int x = 0;
+        for (int i = 0; i < antall; i++) {
+            if (filmarkiv[i].getSjanger() == sjanger) {
+                x++;
+            }
+        }
+        return x;
     }
 
     @Override
     public int antall() {
-        return 0;
+        return antall;
     }
 
     private Film[] trimTab(Film[] tab, int n) {
