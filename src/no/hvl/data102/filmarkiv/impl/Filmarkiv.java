@@ -77,15 +77,15 @@ public class Filmarkiv implements FilmarkivADT {
     @Override
     public Film[] soekProdusent(String delstreng) {
         int count = 0;
-        Film[] sjanger = new Film[antall];
+        Film[] filmProdusent = new Film[antall];
 
         for (int i = 0; i < antall; i++) {
             if (filmarkiv[i].getProdusent().contains(delstreng)) {
                 count++;
-                sjanger[count-1] = filmarkiv[i];
+                filmProdusent[count-1] = filmarkiv[i];
             }
         }
-        return sjanger;
+        return filmProdusent;
     }
 
     @Override

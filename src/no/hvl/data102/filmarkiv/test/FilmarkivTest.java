@@ -32,6 +32,10 @@ class FilmarkivTest {
 
     @Test
     void soekProdusent() {
+        Filmarkiv helloworld = new Filmarkiv(4);
+        helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
+        helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
+        assertEquals(Film[], helloworld.soekProdusent("ACTION"));
     }
 
     @Test
