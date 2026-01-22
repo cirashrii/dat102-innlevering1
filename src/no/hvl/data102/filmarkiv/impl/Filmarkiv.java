@@ -14,7 +14,7 @@ public class Filmarkiv implements FilmarkivADT {
         this.antall=0;
     }
 
-    //test
+
     public Film[] dobleTabell(Film[] tab) {
         this.maksantall = maksantall*2;
         Film[] nytab = new Film[maksantall];
