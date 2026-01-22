@@ -81,11 +81,13 @@ class FilmarkivTest {
         Filmarkiv helloworld = new Filmarkiv(4);
         helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
         helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
+        helloworld.leggTilFilm(new Film(1,"Andrea", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
+        helloworld.leggTilFilm(new Film(1,"Andrea", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
 
         Film[] test = new Film[4];
-        helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
-        helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
-        assertEquals(test, helloworld.soekProdusent("Grethe"));
+        test[0] = new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios");
+        test[1] = new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios");
+        assertArrayEquals(test, helloworld.soekProdusent("Grethe"));
 
     }
 
