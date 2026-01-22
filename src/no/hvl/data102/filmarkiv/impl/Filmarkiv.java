@@ -2,7 +2,7 @@ package no.hvl.data102.filmarkiv.impl;
 
 import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
 
-public class Filmarkiv {
+public class Filmarkiv implements FilmarkivADT {
 
     Film[] filmarkiv;
     int maksantall;
@@ -23,18 +23,27 @@ public class Filmarkiv {
             i++;
         }
         return nytab;
-        }
     }
+
 
     @Override
     public Film finnFilm(int nr) {
-
-        return Film[nr];
+        for (int i = 0; i < antall; i++) {
+            if (filmarkiv[i].getFilmnr() == nr) {
+                return filmarkiv[i];
+            }
+        }
+        return null;
     }
+
 
     @Override
     public void leggTilFilm(Film nyFilm) {
-
+        if (antall == maksantall) {
+            filmarkiv = dobleTabell(filmarkiv);
+        }
+        filmarkiv[antall] = nyFilm;
+        antall++;
     }
 
     @Override
