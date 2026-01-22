@@ -15,96 +15,100 @@ public class FilmarkivMain {
         int antall=0;
 
         Meny meny = new Meny(filma);
-
+        int alltid = 0;
 
         // opprettet en ny (new) scanner for tastatur (System.in)
-        Scanner in = new Scanner(System.in);
 
-        System.out.print("Hva vil du gjøre?\n1) legg til film\n2) Slett film\n3) Se arkiverte filmer\nSvar her: " );
+            Scanner in = new Scanner(System.in);
+        while(alltid==0) {
+            System.out.print("Hva vil du gjøre?\n1) legg til film\n2) Slett film\n3) Se arkiverte filmer\nSvar her: ");
 
-        // les inn
-        int tall = in.nextInt();
+            // les inn
+            int tall = in.nextInt();
 
-        switch(tall) {
+            switch (tall) {
 
-            case 1:
-                antall++;
+                case 1:
+                    antall++;
 
-                System.out.println("Hvem er produsenten?\n Svar: ");
-                String produsent = in.next();
+                    System.out.println("Hvem er produsenten?\n Svar: ");
+                    String produsent = in.next();
 
-                System.out.println("Hva er tittelen?\nSvar: ");
-                String tittel = in.next();
+                    System.out.println("Hva er tittelen?\nSvar: ");
+                    String tittel = in.next();
 
-                System.out.println("Hva er lanseringsår?\nSvar: ");
-                int aar = in.nextInt();
+                    System.out.println("Hva er lanseringsår?\nSvar: ");
+                    int aar = in.nextInt();
 
-                int nytt = 0;
-                Sjanger sjanger = Sjanger.HISTORY;
+                    int nytt = 0;
+                    Sjanger sjanger = Sjanger.HISTORY;
 
-                while(nytt == 0){
-                    System.out.println("Hvilken sjanger er filmen?\n1)Action\n2)Drama\n3)Historie\n4)Sci-Fi\nSvar: ");
-                    int sjangerTall = in.nextInt();
-                    switch(sjangerTall) {
+                    while (nytt == 0) {
+                        System.out.println("Hvilken sjanger er filmen?\n1)Action\n2)Drama\n3)Historie\n4)Sci-Fi\nSvar: ");
+                        int sjangerTall = in.nextInt();
+                        switch (sjangerTall) {
 
-                        case 1:
-                            sjanger = Sjanger.ACTION;
-                            nytt++;
-                         break;
+                            case 1:
+                                sjanger = Sjanger.ACTION;
+                                nytt++;
+                                break;
 
-                        case 2:
-                            sjanger = Sjanger.DRAMA;
-                            nytt++;
-                            break;
+                            case 2:
+                                sjanger = Sjanger.DRAMA;
+                                nytt++;
+                                break;
 
-                        case 3:
-                            sjanger = Sjanger.HISTORY;
-                            nytt++;
-                            break;
+                            case 3:
+                                sjanger = Sjanger.HISTORY;
+                                nytt++;
+                                break;
 
-                        case 4:
-                            sjanger = Sjanger.SCIFI;
-                            nytt++;
-                            break;
+                            case 4:
+                                sjanger = Sjanger.SCIFI;
+                                nytt++;
+                                break;
 
-                        default:
+                            default:
 
-                        break;
+                                break;
+                        }
                     }
-                }
 
-                System.out.println("Hvilket filmselskap er det?\nSvar: ");
-                String filmselskap = in.next();
-
+                    System.out.println("Hvilket filmselskap er det?\nSvar: ");
+                    String filmselskap = in.next();
 
 
-                filma.leggTilFilm(new Film(antall, produsent, tittel, aar, sjanger,filmselskap));
-                System.out.println();
-                System.out.println("Gratulere du har lagt til en film!");
+                    filma.leggTilFilm(new Film(antall, produsent, tittel, aar, sjanger, filmselskap));
+                    System.out.println();
+                    System.out.println("Gratulere du har lagt til en film!");
+                    System.out.println();
 
 
-                break;
+                    break;
 
-            case 2:
+                case 2:
+                    System.out.println();
+                    break;
 
-                break;
+                case 3:
+                    System.out.println(filma.finnFilm(1));
+                    System.out.println();
 
-            case 3:
+                    break;
 
+                default:
+                    System.out.println("Bro...");
+                    System.out.println();
 
-                break;
-
-            default:
-                System.out.println("Bro...");
-            break;
+                    break;
+            }
         }
 
-
-        // lukk scanneren igjen
-        in.close();
-
+            // lukk scanneren igjen
+            in.close();
 
 
             meny.start();
+
     }
 }
