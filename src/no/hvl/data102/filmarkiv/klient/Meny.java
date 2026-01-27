@@ -74,5 +74,5 @@ public class Meny extends Tekstgrensesnitt{
             // lukk scanneren igjen
             in.close();
         }
-
+//<3
 }
