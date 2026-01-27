@@ -58,7 +58,9 @@ public class Meny extends Tekstgrensesnitt{
                         break;
 
                     case 3:
-                        Film temp = filmarkiv.finnFilm(antall);
+                        int tall = Integer.parseInt(showInputDialog("hvilket filmnummer ser du etter?\nDet finnes filmer fra 1 - " + antall));
+
+                        Film temp = filmarkiv.finnFilm(tall);
                         skrivUtFilm(temp);
 
                         break;
