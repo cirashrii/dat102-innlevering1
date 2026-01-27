@@ -84,35 +84,35 @@ public class Tekstgrensesnitt {
     }
 
     // Skriver ut alle filmer med en spesiell delstreng i tittelen
-    public void skrivUtFilmDelstrengITittel(FilmarkivADT arkiv, String delstreng) {
-        Film[] filmer = arkiv.finnFilm();
-
-        if (filmer.length == 0) {
-            System.out.println("Fant ingen filmer med " + delstreng + " i tittelen.");
-            return;
-        }
-
-        System.out.println("Filmer med " + delstreng + " i tittelen.");
-        for (int i = 0; i < filmer.length; i++) {
-            System.out.println((i + 1) + ": ");
-            skrivUtFilm(filmer[i]);
-        }
-    }
+//    public void skrivUtFilmDelstrengITittel(FilmarkivADT arkiv, String delstreng) {
+//        Film[] filmer = arkiv.finnFilm();
+//
+//        if (filmer.length == 0) {
+//            System.out.println("Fant ingen filmer med " + delstreng + " i tittelen.");
+//            return;
+//        }
+//
+//        System.out.println("Filmer med " + delstreng + " i tittelen.");
+//        for (int i = 0; i < filmer.length; i++) {
+//            System.out.println((i + 1) + ": ");
+//            skrivUtFilm(filmer[i]);
+//        }
+//    }
 
     // Skriver ut alle Filmer av en produsent (produsent er delstreng)
-    public void skrivUtFilmProdusent(FilmarkivADT arkiv, String delstreng) {
-        Film[] filmer = arkiv.finnFilm();
-
-        if (filmer.length == 0) {
-            System.out.println("Fant ingen filmer fra produsent " + delstreng + "." );
-            return;
-        }
-        System.out.println("Filmer fra produsent " + delstreng + ":");
-        for (int i = 0; i < filmer.length; i++) {
-            System.out.println((i + 1) + ": ");
-            skrivUtFilm(filmer[i]);
-        }
-    }
+//    public void skrivUtFilmProdusent(FilmarkivADT arkiv, String delstreng) {
+//        Film[] filmer = arkiv.finnFilm();
+//
+//        if (filmer.length == 0) {
+//            System.out.println("Fant ingen filmer fra produsent " + delstreng + "." );
+//            return;
+//        }
+//        System.out.println("Filmer fra produsent " + delstreng + ":");
+//        for (int i = 0; i < filmer.length; i++) {
+//            System.out.println((i + 1) + ": ");
+//            skrivUtFilm(filmer[i]);
+//        }
+//    }
 
     // Skriver ut en enkel statistikk som inneholder antall filmer totalt
 // og hvor mange det er i hver sjanger.

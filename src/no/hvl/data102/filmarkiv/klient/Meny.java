@@ -16,13 +16,8 @@ public class Meny {
         public Meny(FilmarkivADT filmarkiv){
             tekstgr = new Tekstgrensesnitt();
             this.filmarkiv = filmarkiv;
-        }
-        public void start(FilmarkivADT filmarkiv){
-// legg inn en del forhåndsdefinerte filmer for å teste metodene
-// ..
-// TODO
 
-            int antall=0;
+            int antall=3;
 
 
             int alltid = 0;
@@ -41,7 +36,7 @@ public class Meny {
                     case 1:
                         antall++;
 
-                        filmarkiv.leggTilFilm(lesFilm(antall));
+
 
                         System.out.println();
                         System.out.println("Gratulere du har lagt til en film!");
@@ -69,8 +64,16 @@ public class Meny {
             // lukk scanneren igjen
             in.close();
 
+        }
+        public void start(FilmarkivADT filmarkiv){
+// legg inn en del forhåndsdefinerte filmer for å teste metodene
+// ..
+// TODO
 
             Film aaa = new Film(3,"George", "Wars", 1995, Sjanger.ACTION, "Disney");
+            filmarkiv.leggTilFilm(aaa);
+            filmarkiv.leggTilFilm(new Film(1, "Ashley", "Loaf Cat: Loafening", 2028, Sjanger.DRAMA, "Ashley"));
+            filmarkiv.leggTilFilm(new Film(2, "Grethe", "Proj", 2026, Sjanger.SCIFI,"Disn"));
 
         }
 }
