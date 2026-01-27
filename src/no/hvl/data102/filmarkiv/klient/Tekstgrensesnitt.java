@@ -122,5 +122,6 @@ public class Tekstgrensesnitt {
         }
     }
 // osv ... andre metoder
+    //<3
 }
 
