@@ -23,7 +23,6 @@ public class Tekstgrensesnitt {
         int aar = Integer.parseInt(showInputDialog("År: "));
 
 
-
         int nytt = 0;
         Sjanger sjanger = Sjanger.HISTORY;
 
@@ -62,21 +61,17 @@ public class Tekstgrensesnitt {
         return new Film(a, produsent, tittel, aar, sjanger, filmselskap);
 
 
-
     }
 
     // Skriver ut en film med alle opplysninger på skjerm (husk tekst for sjanger)
     public void skrivUtFilm(Film film) {
         if (film == null) {
-            System.out.println("Ingen film å vise");
+            showMessageDialog(null, "Ingen film å vise");
             return;
         }
 
-        System.out.println("Filmnummer: " + film.getFilmnr());
-        System.out.println("Produsent: " + film.getProdusent());
-        System.out.println("Tittel: " + film.getTittel());
-        System.out.println("År: " + film.getAar());
-        System.out.println("Sjanger: " + film.getSjanger());
+        showMessageDialog(null, "Filmnummer: " + film.getFilmnr() + "\nProdusent: " + film.getProdusent() +
+                "\nTittel: " + film.getTittel() + "\nÅr: " + film.getAar() + "\nSjanger: " + film.getSjanger() + "\n filmselskap: " + film.getFilmselskap());
     }
 
     // Skriver ut alle filmer med en spesiell delstreng i tittelen
@@ -121,7 +116,17 @@ public class Tekstgrensesnitt {
             System.out.println("Antall " + sjanger + ": " + arkiv.antall(sjanger));
         }
     }
-// osv ... andre metoder
-    //<3
-}
 
+    // osv ... andre metoder
+    public int slettFilm(int tall1, int antall1) {
+         int j;
+        for(int i = tall1; i<antall1+1; i++){
+
+            j = i-1;
+        }
+
+            antall1--;
+
+        return antall1;
+    }
+}

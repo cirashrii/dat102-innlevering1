@@ -10,6 +10,9 @@ import no.hvl.data102.filmarkiv.klient.FilmarkivMain;
 
 import java.util.Scanner;
 
+import static javax.swing.JOptionPane.showInputDialog;
+import static javax.swing.JOptionPane.showMessageDialog;
+
 public class Meny extends Tekstgrensesnitt{
         private Tekstgrensesnitt tekstgr;
         private FilmarkivADT filmarkiv;
@@ -33,14 +36,11 @@ public class Meny extends Tekstgrensesnitt{
 
             // opprettet en ny (new) scanner for tastatur (System.in)
             int antall=3;
-            Scanner in = new Scanner(System.in);
+
             while(alltid==0) {
-                System.out.print("Hva vil du gjøre?\n1) legg til film\n2) Slett film\n3) Se arkiverte filmer\nSvar her: ");
+                int meny = Integer.parseInt(showInputDialog("Hva vil du gjøre? \n1) Legg til film   2) Slett film   3) Se arkiverte filmer "));
 
-                // les inn
-                int tall = in.nextInt();
-
-                switch (tall) {
+                switch (meny) {
 
                     case 1:
                         antall++;
@@ -54,12 +54,27 @@ public class Meny extends Tekstgrensesnitt{
                         break;
 
                     case 2:
-                        System.out.println();
+
+                        int tall2 = Integer.parseInt(showInputDialog("hvilket filmnummer vil du slette?\nDet finnes filmer fra 1 - " + antall));
+
+                        antall = slettFilm(tall2, antall);
+                        filmarkiv.finnFilm(antall) = null;
+
+
+
+                        // Velg en film fra tall 1 til antall
+                        // Flytt de andre ned et hakk
+                        // Mens jeg gjør det, oppdater hver index til -1 av hva det var (typ. setAntall(getAntall()-1) eller noe sånt)
+                        // Profit
+
+
                         break;
 
                     case 3:
-                        System.out.println(filmarkiv.finnFilm(antall));
-                        System.out.println();
+                        int tall = Integer.parseInt(showInputDialog("hvilket filmnummer ser du etter?\nDet finnes filmer fra 1 - " + antall));
+
+                        Film temp = filmarkiv.finnFilm(tall);
+                        skrivUtFilm(temp);
 
                         break;
 
@@ -70,9 +85,5 @@ public class Meny extends Tekstgrensesnitt{
                         break;
                 }
             }
-
-            // lukk scanneren igjen
-            in.close();
         }
-//<3
 }
