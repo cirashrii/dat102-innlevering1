@@ -3,6 +3,7 @@ package no.hvl.data102.filmarkiv.klient;
 import no.hvl.data102.filmarkiv.adt.FilmarkivADT;
 import no.hvl.data102.filmarkiv.impl.Film;
 import no.hvl.data102.filmarkiv.impl.Sjanger;
+import no.hvl.data102.filmarkiv.klient.Tekstgrensesnitt;
 
 import no.hvl.data102.filmarkiv.klient.FilmarkivMain;
 
@@ -40,60 +41,12 @@ public class Meny {
                     case 1:
                         antall++;
 
-                        System.out.println("Hvem er produsenten?\n Svar: ");
-                        String produsent = in.next();
+                        filmarkiv.leggTilFilm(lesFilm(antall));
 
-                        System.out.println("Hva er tittelen?\nSvar: ");
-                        String tittel = in.next();
-
-                        System.out.println("Hva er lanseringsår?\nSvar: ");
-                        int aar = in.nextInt();
-
-                        int nytt = 0;
-                        Sjanger sjanger = Sjanger.HISTORY;
-
-                        while (nytt == 0) {
-                            System.out.println("Hvilken sjanger er filmen?\n1)Action\n2)Drama\n3)Historie\n4)Sci-Fi\nSvar: ");
-                            int sjangerTall = in.nextInt();
-                            switch (sjangerTall) {
-
-                                case 1:
-                                    sjanger = Sjanger.ACTION;
-                                    nytt++;
-                                    break;
-
-                                case 2:
-                                    sjanger = Sjanger.DRAMA;
-                                    nytt++;
-                                    break;
-
-                                case 3:
-                                    sjanger = Sjanger.HISTORY;
-                                    nytt++;
-                                    break;
-
-                                case 4:
-                                    sjanger = Sjanger.SCIFI;
-                                    nytt++;
-                                    break;
-
-                                default:
-
-                                    break;
-                            }
-                        }
-
-                        System.out.println("Hvilket filmselskap er det?\nSvar: ");
-                        String filmselskap = in.next();
-
-
-                        filmarkiv.leggTilFilm(new Film(antall, produsent, tittel, aar, sjanger, filmselskap));
                         System.out.println();
                         System.out.println("Gratulere du har lagt til en film!");
                         System.out.println();
-
-
-                        break;
+                        //insert metode fra tekstgrense
 
                     case 2:
                         System.out.println();
