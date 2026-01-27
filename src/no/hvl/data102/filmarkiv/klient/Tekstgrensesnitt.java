@@ -8,28 +8,27 @@ import no.hvl.data102.filmarkiv.impl.Sjanger;
 import java.util.Scanner;
 
 import static java.lang.System.in;
+import static javax.swing.JOptionPane.showInputDialog;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class Tekstgrensesnitt {
 
 
     // Leser inn opplysninger om en film fra tastatur og returnere et Film-objekt
     public Film lesFilm(int a) {
-        Scanner tekst = new Scanner(System.in);
-        System.out.println("Hvem er produsenten?\n Svar: ");
-        String produsent = tekst.next();
+        String produsent = showInputDialog("Produsent: ");
 
-        System.out.println("Hva er tittelen?\nSvar: ");
-        String tittel = tekst.next();
+        String tittel = showInputDialog("Tittel: ");
 
-        System.out.println("Hva er lanseringsår?\nSvar: ");
-        int aar = tekst.nextInt();
+        int aar = Integer.parseInt(showInputDialog("År: "));
+
+
 
         int nytt = 0;
         Sjanger sjanger = Sjanger.HISTORY;
 
         while (nytt == 0) {
-            System.out.println("Hvilken sjanger er filmen?\n1)Action\n2)Drama\n3)Historie\n4)Sci-Fi\nSvar: ");
-            int sjangerTall = tekst.nextInt();
+            int sjangerTall = Integer.parseInt(showInputDialog("Hvilken sjanger er filmen?\n1) Action   2) Drama   3) Historie   4) Sci-Fi "));
             switch (sjangerTall) {
 
                 case 1:
@@ -57,10 +56,7 @@ public class Tekstgrensesnitt {
                     break;
             }
         }
-
-        System.out.println("Hvilket filmselskap er det?\nSvar: ");
-        String filmselskap = tekst.next();
-        tekst.close();
+        String filmselskap = showInputDialog("Filmselskap: ");
 
 
         return new Film(a, produsent, tittel, aar, sjanger, filmselskap);

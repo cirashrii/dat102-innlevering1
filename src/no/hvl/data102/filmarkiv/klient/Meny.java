@@ -58,7 +58,7 @@ public class Meny extends Tekstgrensesnitt{
                         break;
 
                     case 3:
-                        System.out.println(filmarkiv.finnFilm(1));
+                        System.out.println(filmarkiv.finnFilm(antall));
                         System.out.println();
 
                         break;
