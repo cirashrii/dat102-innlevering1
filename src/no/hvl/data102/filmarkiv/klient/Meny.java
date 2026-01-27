@@ -54,6 +54,13 @@ public class Meny extends Tekstgrensesnitt{
                         break;
 
                     case 2:
+
+
+                        // Velg en film fra tall 1 til antall
+                        // Flytt de andre ned et hakk
+                        // Mens jeg gjør det, oppdater hver index til -1 av hva det var (typ. setAntall(getAntall()-1) eller noe sånt)
+                        // Profit
+
                         System.out.println();
                         break;
 

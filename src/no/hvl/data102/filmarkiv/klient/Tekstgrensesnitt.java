@@ -73,7 +73,7 @@ public class Tekstgrensesnitt {
         }
 
         showMessageDialog(null, "Filmnummer: " + film.getFilmnr() + "\nProdusent: " + film.getProdusent() +
-                "\nTittel: " + film.getTittel() + "\nÅr: " + film.getAar() + "\nSjanger: " + film.getSjanger());
+                "\nTittel: " + film.getTittel() + "\nÅr: " + film.getAar() + "\nSjanger: " + film.getSjanger() + "\n filmselskap: " + film.getFilmselskap());
     }
 
     // Skriver ut alle filmer med en spesiell delstreng i tittelen
