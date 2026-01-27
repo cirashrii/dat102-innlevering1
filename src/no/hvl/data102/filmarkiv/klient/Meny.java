@@ -10,20 +10,29 @@ import no.hvl.data102.filmarkiv.klient.FilmarkivMain;
 
 import java.util.Scanner;
 
-public class Meny {
+public class Meny extends Tekstgrensesnitt{
         private Tekstgrensesnitt tekstgr;
         private FilmarkivADT filmarkiv;
         public Meny(FilmarkivADT filmarkiv){
             tekstgr = new Tekstgrensesnitt();
             this.filmarkiv = filmarkiv;
 
-            int antall=3;
 
 
+        }
+        public void start(FilmarkivADT filmarkiv){
+// legg inn en del forhåndsdefinerte filmer for å teste metodene
+// ..
+// TODO
+
+            Film aaa = new Film(3,"George", "Wars", 1995, Sjanger.ACTION, "Disney");
+            filmarkiv.leggTilFilm(aaa);
+            filmarkiv.leggTilFilm(new Film(1, "Ashley", "Loaf Cat: Loafening", 2028, Sjanger.DRAMA, "Ashley"));
+            filmarkiv.leggTilFilm(new Film(2, "Grethe", "Proj", 2026, Sjanger.SCIFI,"Disn"));
             int alltid = 0;
 
             // opprettet en ny (new) scanner for tastatur (System.in)
-
+            int antall=3;
             Scanner in = new Scanner(System.in);
             while(alltid==0) {
                 System.out.print("Hva vil du gjøre?\n1) legg til film\n2) Slett film\n3) Se arkiverte filmer\nSvar her: ");
@@ -36,12 +45,13 @@ public class Meny {
                     case 1:
                         antall++;
 
-
+                        lesFilm(antall);
 
                         System.out.println();
                         System.out.println("Gratulere du har lagt til en film!");
                         System.out.println();
                         //insert metode fra tekstgrense
+                        break;
 
                     case 2:
                         System.out.println();
@@ -63,17 +73,6 @@ public class Meny {
 
             // lukk scanneren igjen
             in.close();
-
         }
-        public void start(FilmarkivADT filmarkiv){
-// legg inn en del forhåndsdefinerte filmer for å teste metodene
-// ..
-// TODO
 
-            Film aaa = new Film(3,"George", "Wars", 1995, Sjanger.ACTION, "Disney");
-            filmarkiv.leggTilFilm(aaa);
-            filmarkiv.leggTilFilm(new Film(1, "Ashley", "Loaf Cat: Loafening", 2028, Sjanger.DRAMA, "Ashley"));
-            filmarkiv.leggTilFilm(new Film(2, "Grethe", "Proj", 2026, Sjanger.SCIFI,"Disn"));
-
-        }
 }
