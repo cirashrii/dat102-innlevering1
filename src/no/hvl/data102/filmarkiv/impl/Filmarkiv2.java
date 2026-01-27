@@ -44,12 +44,11 @@ public class Filmarkiv2 implements FilmarkivADT {
 
     @Override
     public boolean slettFilm(int filmnr) {
-        Film filmen = finnFilm(filmnr);
         LinearNode<Film> slett = start;
         LinearNode<Film> forrige = null;
         if (antall > 0) {
             while (slett != null) {
-                if (slett.data == filmen) {
+                if (slett.data.getFilmnr() == filmnr) {
                     if (forrige == null) {
                         start = slett.neste;
                     } else {
@@ -115,13 +114,12 @@ public class Filmarkiv2 implements FilmarkivADT {
 
     private Film[] trimTab(Film[] tab, int n) {
         Film[] nytab = new Film[n];
-        int count = 0;
-        LinearNode<Film> iterasjon = start;
-        while (iterasjon != null && count < n) {
-            nytab[count] = iterasjon.data;
-            iterasjon = iterasjon.neste;
-            count++;
+        int i = 0;
+        while (i < n) {
+            nytab[i] = tab[i];
+            i++;
         }
         return nytab;
     }
 }
+

@@ -1,7 +1,6 @@
 package no.hvl.data102.filmarkiv.test;
 
 import no.hvl.data102.filmarkiv.impl.Film;
-import no.hvl.data102.filmarkiv.impl.Filmarkiv;
 import no.hvl.data102.filmarkiv.impl.Filmarkiv2;
 import no.hvl.data102.filmarkiv.impl.Sjanger;
 import org.junit.jupiter.api.Assertions;
@@ -28,7 +27,7 @@ public class Filmarkiv2Test {
     void leggTilFilm() {
         var Film = new Film();
 
-        Filmarkiv samling = new Filmarkiv(4);
+        Filmarkiv2 samling = new Filmarkiv2();
         Film aaa = new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios");
         samling.leggTilFilm(new Film(1,"Grethe", "Proj 2 electric boogaloo", 2007, Sjanger.ACTION, "StudioStudios"));
 
@@ -39,7 +38,7 @@ public class Filmarkiv2Test {
 
     @Test
     void slettFilm() {
-        Filmarkiv samling = new Filmarkiv(2);
+        Filmarkiv2 samling = new Filmarkiv2();
         Film aaa = new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios");
         Film bbb = new Film(2,"Grethe", "Proj 2 electric boogaloo", 2007, Sjanger.ACTION, "StudioStudios");
 
@@ -49,7 +48,7 @@ public class Filmarkiv2Test {
 
     @Test
     void soekTittel() {
-        Filmarkiv Tittel = new Filmarkiv(4);
+        Filmarkiv2 Tittel = new Filmarkiv2();
         Tittel.leggTilFilm(new Film(1, "Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
         Tittel.leggTilFilm(new Film(1, "Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
         Tittel.leggTilFilm(new Film(1, "Grethe", "Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
@@ -63,7 +62,7 @@ public class Filmarkiv2Test {
 
     @Test
     void soekProdusent() {
-        Filmarkiv helloworld = new Filmarkiv(4);
+        Filmarkiv2 helloworld = new Filmarkiv2();
         helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
         helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
         helloworld.leggTilFilm(new Film(1,"Andrea", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
@@ -78,7 +77,7 @@ public class Filmarkiv2Test {
 
     @Test
     void antall() {
-        Filmarkiv samling = new Filmarkiv(2);
+        Filmarkiv2 samling = new Filmarkiv2();
         Film aaa = new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios");
         Film bbb = new Film(2,"Grethe", "Proj 2 electric boogaloo", 2007, Sjanger.ACTION, "StudioStudios");
 
@@ -88,7 +87,7 @@ public class Filmarkiv2Test {
 
     @Test
     void testAntall() {
-        Filmarkiv samling = new Filmarkiv(4);
+        Filmarkiv2 samling = new Filmarkiv2();
         samling.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
         samling.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.DRAMA, "StudioStudios"));
 
