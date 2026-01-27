@@ -23,7 +23,6 @@ public class Tekstgrensesnitt {
         int aar = Integer.parseInt(showInputDialog("År: "));
 
 
-
         int nytt = 0;
         Sjanger sjanger = Sjanger.HISTORY;
 
@@ -60,7 +59,6 @@ public class Tekstgrensesnitt {
 
 
         return new Film(a, produsent, tittel, aar, sjanger, filmselskap);
-
 
 
     }
@@ -118,7 +116,17 @@ public class Tekstgrensesnitt {
             System.out.println("Antall " + sjanger + ": " + arkiv.antall(sjanger));
         }
     }
-// osv ... andre metoder
 
+    // osv ... andre metoder
+    public int slettFilm(int tall1, int antall1) {
+         int j;
+        for(int i = tall1; i<antall1+1; i++){
+
+            j = i-1;
+        }
+
+            antall1--;
+
+        return antall1;
+    }
 }
-

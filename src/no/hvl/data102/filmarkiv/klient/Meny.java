@@ -55,13 +55,19 @@ public class Meny extends Tekstgrensesnitt{
 
                     case 2:
 
+                        int tall2 = Integer.parseInt(showInputDialog("hvilket filmnummer vil du slette?\nDet finnes filmer fra 1 - " + antall));
+
+                        antall = slettFilm(tall2, antall);
+                        filmarkiv.finnFilm(antall) = null;
+
+
 
                         // Velg en film fra tall 1 til antall
                         // Flytt de andre ned et hakk
                         // Mens jeg gjør det, oppdater hver index til -1 av hva det var (typ. setAntall(getAntall()-1) eller noe sånt)
                         // Profit
 
-                        System.out.println();
+
                         break;
 
                     case 3:
