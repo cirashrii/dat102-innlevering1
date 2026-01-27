@@ -45,7 +45,7 @@ public class Meny extends Tekstgrensesnitt{
                     case 1:
                         antall++;
 
-                        lesFilm(antall);
+                        filmarkiv.leggTilFilm(lesFilm(antall));
 
                         System.out.println();
                         System.out.println("Gratulere du har lagt til en film!");
