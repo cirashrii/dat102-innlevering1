@@ -68,15 +68,12 @@ public class Tekstgrensesnitt {
     // Skriver ut en film med alle opplysninger på skjerm (husk tekst for sjanger)
     public void skrivUtFilm(Film film) {
         if (film == null) {
-            System.out.println("Ingen film å vise");
+            showMessageDialog(null, "Ingen film å vise");
             return;
         }
 
-        System.out.println("Filmnummer: " + film.getFilmnr());
-        System.out.println("Produsent: " + film.getProdusent());
-        System.out.println("Tittel: " + film.getTittel());
-        System.out.println("År: " + film.getAar());
-        System.out.println("Sjanger: " + film.getSjanger());
+        showMessageDialog(null, "Filmnummer: " + film.getFilmnr() + "\nProdusent: " + film.getProdusent() +
+                "\nTittel: " + film.getTittel() + "\nÅr: " + film.getAar() + "\nSjanger: " + film.getSjanger());
     }
 
     // Skriver ut alle filmer med en spesiell delstreng i tittelen
@@ -122,6 +119,6 @@ public class Tekstgrensesnitt {
         }
     }
 // osv ... andre metoder
-    //<3
+
 }
 

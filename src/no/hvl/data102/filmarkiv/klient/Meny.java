@@ -10,6 +10,9 @@ import no.hvl.data102.filmarkiv.klient.FilmarkivMain;
 
 import java.util.Scanner;
 
+import static javax.swing.JOptionPane.showInputDialog;
+import static javax.swing.JOptionPane.showMessageDialog;
+
 public class Meny extends Tekstgrensesnitt{
         private Tekstgrensesnitt tekstgr;
         private FilmarkivADT filmarkiv;
@@ -33,14 +36,11 @@ public class Meny extends Tekstgrensesnitt{
 
             // opprettet en ny (new) scanner for tastatur (System.in)
             int antall=3;
-            Scanner in = new Scanner(System.in);
+
             while(alltid==0) {
-                System.out.print("Hva vil du gjøre?\n1) legg til film\n2) Slett film\n3) Se arkiverte filmer\nSvar her: ");
+                int meny = Integer.parseInt(showInputDialog("Hva vil du gjøre? \n1) Legg til film   2) Slett film   3) Se arkiverte filmer "));
 
-                // les inn
-                int tall = in.nextInt();
-
-                switch (tall) {
+                switch (meny) {
 
                     case 1:
                         antall++;
@@ -58,8 +58,8 @@ public class Meny extends Tekstgrensesnitt{
                         break;
 
                     case 3:
-                        System.out.println(filmarkiv.finnFilm(antall));
-                        System.out.println();
+                        Film temp = filmarkiv.finnFilm(antall);
+                        skrivUtFilm(temp);
 
                         break;
 
@@ -70,9 +70,5 @@ public class Meny extends Tekstgrensesnitt{
                         break;
                 }
             }
-
-            // lukk scanneren igjen
-            in.close();
         }
-//<3
 }
