@@ -29,13 +29,13 @@ public class FilmarkivTestTest {
     void leggTilFilm_skalLeggeTilFilmIArray() {
         // Given
         Film expected = new Film(0, "Ashley", "Loaf Cat: Loafening", 2028, Sjanger.DRAMA, "Ashley");
-        Filmarkiv test = new Filmarkiv(50);
+        Filmarkiv testfilmarkiv = new Filmarkiv(50);
 
         // When
-        test.leggTilFilm(expected);
+        testfilmarkiv.leggTilFilm(expected);
 
         // Then
-        Assertions.assertEquals(1,test.antall(),1);
+        Assertions.assertEquals(1,testfilmarkiv.antall(),1);
     }
 
 }
