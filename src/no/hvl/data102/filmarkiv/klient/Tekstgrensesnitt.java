@@ -122,8 +122,7 @@ public class Tekstgrensesnitt {
          int j;
         for(int i = tall1; i<antall1+1; i++){
 
-            j = i-1;
-        }
+}
 
             antall1--;
 

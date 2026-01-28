@@ -28,10 +28,10 @@ public class Meny extends Tekstgrensesnitt{
 // ..
 // TODO
 
-            Film aaa = new Film(3,"George", "Wars", 1995, Sjanger.ACTION, "Disney");
+            Film aaa = new Film(1,"George", "Wars", 1995, Sjanger.ACTION, "Disney");
             filmarkiv.leggTilFilm(aaa);
-            filmarkiv.leggTilFilm(new Film(1, "Ashley", "Loaf Cat: Loafening", 2028, Sjanger.DRAMA, "Ashley"));
-            filmarkiv.leggTilFilm(new Film(2, "Grethe", "Proj", 2026, Sjanger.SCIFI,"Disn"));
+            filmarkiv.leggTilFilm(new Film(2, "Ashley", "Loaf Cat: Loafening", 2028, Sjanger.DRAMA, "Ashley"));
+            filmarkiv.leggTilFilm(new Film(3, "Grethe", "Proj", 2026, Sjanger.SCIFI,"Disn"));
             int alltid = 0;
 
             // opprettet en ny (new) scanner for tastatur (System.in)
@@ -54,11 +54,12 @@ public class Meny extends Tekstgrensesnitt{
                         break;
 
                     case 2:
-
                         int tall2 = Integer.parseInt(showInputDialog("hvilket filmnummer vil du slette?\nDet finnes filmer fra 1 - " + antall));
 
-                        antall = slettFilm(tall2, antall);
-                        filmarkiv.finnFilm(antall) = null;
+                        filmarkiv.slettFilm(tall2);
+                        System.out.println("Slettingen har fungert :)");
+
+                        antall--;
 
 
 
