@@ -8,6 +8,7 @@ import no.hvl.data102.filmarkiv.klient.Tekstgrensesnitt;
 import no.hvl.data102.filmarkiv.klient.FilmarkivMain;
 
 
+import javax.swing.*;
 import java.util.Scanner;
 
 import static javax.swing.JOptionPane.showInputDialog;
@@ -28,15 +29,15 @@ public class Meny extends Tekstgrensesnitt{
 // ..
 // TODO
 
+
             Film aaa = new Film(1,"George", "Wars", 1995, Sjanger.ACTION, "Disney");
             filmarkiv.leggTilFilm(aaa);
             filmarkiv.leggTilFilm(new Film(2, "Ashley", "Loaf Cat: Loafening", 2028, Sjanger.DRAMA, "Ashley"));
             filmarkiv.leggTilFilm(new Film(3, "Grethe", "Proj", 2026, Sjanger.SCIFI,"Disn"));
             int alltid = 0;
-
+            SwingUtilities.invokeLater(() -> {
             // opprettet en ny (new) scanner for tastatur (System.in)
             int antall=3;
-
             while(alltid==0) {
                 int meny = Integer.parseInt(showInputDialog("Hva vil du gjøre? \n1) Legg til film   2) Slett film   3) Se arkiverte filmer "));
 
@@ -62,7 +63,6 @@ public class Meny extends Tekstgrensesnitt{
                         antall--;
 
 
-
                         // Velg en film fra tall 1 til antall
                         // Flytt de andre ned et hakk
                         // Mens jeg gjør det, oppdater hver index til -1 av hva det var (typ. setAntall(getAntall()-1) eller noe sånt)
@@ -84,7 +84,9 @@ public class Meny extends Tekstgrensesnitt{
                         System.out.println();
 
                         break;
+
                 }
-            }
+                }
+            });
         }
 }
