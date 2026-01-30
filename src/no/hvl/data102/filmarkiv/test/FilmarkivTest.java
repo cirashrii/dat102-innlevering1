@@ -15,14 +15,13 @@ class FilmarkivTest {
 
     @Test
     void dobleTabell() {
-//        Filmarkiv helloworld = new Filmarkiv(2);
-//        helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
-//        helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
-//        helloworld.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
-//
-//        assertEquals(helloworld.antall(),3);
-        //out of bounds error, dobletabell fungerer ikke
-        //vet ikke hvordan jeg sjekker dobletabell direkte (uten å legge til metoder), må istedet satse på antall
+        Filmarkiv tab= new Filmarkiv(2);
+        Film[] nytab = new Film[2];
+        Assertions.assertEquals(4, tab.dobleTabell(nytab).length);
+        tab.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
+        tab.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
+        tab.leggTilFilm(new Film(1,"Grethe", "Proj Filmen", 2005, Sjanger.ACTION, "StudioStudios"));
+        Assertions.assertEquals(3, tab.antall());
     }
 
     @Test
