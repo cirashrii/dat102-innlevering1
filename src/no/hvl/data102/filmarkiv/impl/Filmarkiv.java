@@ -16,10 +16,10 @@ public class Filmarkiv implements FilmarkivADT {
 
 
     public Film[] dobleTabell(Film[] tab) {
-        this.maksantall = maksantall*2;
-        Film[] nytab = new Film[maksantall];
+        int lengde = tab.length*2;
+        Film[] nytab = new Film[lengde];
         int i = 0;
-        while (i < maksantall) {
+        while (i < tab.length) {
             nytab[i] = tab[i];
             i++;
         }
